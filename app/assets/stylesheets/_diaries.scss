@@ -1,0 +1,144 @@
+// Place all the styles related to the diaries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content{
+    height: 100Vh;
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 480px;
+    font-size: 40px;
+    background-image: url("haikei.jpg");
+    background-size: cover;
+    color: white;
+
+}
+
+.new_diary{
+    
+    .box1{
+        // width :440px;
+        // height :60px !important;
+    }
+
+    .box2{
+        width :800px;
+        height :400px !important;
+        font-size: 20px;
+    }
+    
+        .syashin{
+        position: relative;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #FFF;
+        background: #fd9535;/*色*/
+        border-radius: 4px;/*角の丸み*/
+        box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+        border: solid 2px #d27d00;/*線色*/
+        font-size: 20px;
+        
+    }
+    .box3{
+        display: none;
+        
+    }
+
+}
+.box{
+    width: 500px;
+    height: 60px;
+
+}
+
+
+
+
+
+.con{
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.box {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url('renga.jpg');
+    background-size: cover;
+    padding-top: 200px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 200px;
+}
+
+.title{
+    height: 40px;
+    color: red;
+    font-size: 32px;
+    position: relative;
+    padding: 0 0 2px 32px;
+    border-bottom: 1px solid #888;
+    background-color: snow;
+    border-bottom: 2px silver;
+    font-family: fantasy;
+    margin-top: 20px;
+    &:before, &:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 12px;
+        height: 12px;
+        border: 2px solid #d14;
+        margin: auto;
+    }
+    &:before{
+        top: -6px;
+        left: 0px;
+        animation: spin 5s linear infinite;
+    }
+    &:after{
+        top: 6px;
+        left: 6px;
+        animation: spin 5s linear infinite;
+    }
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(560deg);
+    }
+}
+
+
+.bun{
+    height: 400px;
+    display: flex;
+    background-color: whitesmoke;
+
+    .txst{
+        width: 50%;
+        white-space: pre-wrap;
+    }
+
+    .sayashin{
+        width: 50%;
+        text-align: center;
+    }
+
+    
+   
+
+    .top{
+        color: white;
+        .pagination a{
+            color: white;
+        }
+    }
+}
+

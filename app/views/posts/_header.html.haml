@@ -1,0 +1,47 @@
+.header 
+  
+  %a#hamburger{:href => "javascript:void(0)"}
+    %span
+    %span
+    %span
+  #overlay
+  #drawer-menu    
+    - if user_signed_in?
+      %ul
+        %li
+          %p
+            = current_user.nickname
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+        %li
+          = link_to  "検索する"
+        %li
+          = link_to "日記を書く", new_diary_path
+        %li
+          = link_to "日記の確認", "/diaries/#{user_id: current_user.id}"
+    - else
+      %ul
+        %li
+          = link_to "ゲスト" 
+        %li
+          = link_to "ログイン", new_user_session_path, class: 'post'
+        %li
+          = link_to "新規登録", new_user_registration_path, class: 'post'      
+        %li
+          = link_to "検索する"
+    
+    %a#close{:href => "javascript:void(0)"}
+      %span
+      %span
+  .header__title
+    Bikepple    
+  
+.bar
+ 
+  .recommendation
+    =link_to "#"do
+      おすすめ
+  .prefectures
+    =link_to "#"do
+      都道府県
+    

@@ -1,0 +1,12 @@
+.box
+  - @diaries.each do |diary|
+    .title
+      = diary.title
+    .bun
+      .txst
+        = diary.text
+      .sayashin
+        =image_tag diary.image, width:"520px", height:"400px"
+  = paginate(@diaries)
+
+  =link_to "トップページに戻る", root_path, class: 'top'
