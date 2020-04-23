@@ -18,7 +18,9 @@
         %li
           = link_to "日記を書く", new_diary_path
         %li
-          = link_to "日記の確認", "/diaries/#{user_id: current_user.id}"
+          = link_to "自分の日記のみる", diary_path(current_user.id)
+        %li
+          = link_to "全員の日記をみる", diaries_path
     - else
       %ul
         %li

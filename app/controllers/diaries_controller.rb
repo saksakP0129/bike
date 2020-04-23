@@ -4,8 +4,7 @@ class DiariesController < ApplicationController
 
     def index
         @diaries= Diary
-        .includes(:user).order("created_at DESC").page(params[:page]).per(5)
-       
+        .includes(:user).order("created_at DESC").page(params[:page]).per(5)  
     end
 
     def new
@@ -15,17 +14,31 @@ class DiariesController < ApplicationController
     def create
         Diary.create(diary_params)
         redirect_to diaries_path
-      
-        
     end
+
+    def show
+        @diaries = Diary.page(params[:page]).per(5) .order("created_at DESC")
+    end
+
+    def edit
+        @diary = Diary.find(params[:id])
+      end
+    
+      def update
+        diary = Diary.find(params[:id])
+        diary.update(diary_params)
+        redirect_to diary_path(diary.id)
+      end
+    
+      def destroy
+        diary = Diary.find(params[:id])
+        diary.destroy
+        redirect_to diaries_path
+      end
 
     def search
         @diaries = Diary.search(params[:keyword])
         redirect_to search_diaries_path
-        # @diaries = Diary.search(params[:q])
-        # @diaries = @diariess.page(params[:page])
-        # "render index"
-        
     end
     
     private
@@ -39,6 +52,6 @@ class DiariesController < ApplicationController
     
     def move_to_index
         redirect_to action: :index unless user_signed_in?
+      end
     end
-    
-end
+
