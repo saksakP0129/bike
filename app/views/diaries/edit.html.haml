@@ -1,0 +1,10 @@
+.content
+  記事の編集
+  =form_for @diary do |f|
+    = f.text_field :title, :size=>"20", class: "box1"
+    = f.text_area :text, class: "box2"
+    %label
+      .syashin
+        写真
+        = f.file_field :image, class: "box3"
+    = f.submit class: ""
